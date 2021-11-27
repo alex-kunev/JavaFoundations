@@ -1,0 +1,1 @@
+This is a GitHub repository for my JavaFundamentals course with weekly exercises.

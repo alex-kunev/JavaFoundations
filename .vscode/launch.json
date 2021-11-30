@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch printTriangle",
+            "request": "launch",
+            "mainClass": "methods.printTriangle",
+            "projectName": "JavaFoundations_fed20069"
+        },
+        {
+            "type": "java",
             "name": "Launch grades",
             "request": "launch",
             "mainClass": "methods.grades",

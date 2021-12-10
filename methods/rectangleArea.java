@@ -8,7 +8,8 @@ public class rectangleArea {
         Scanner sc = new Scanner(System.in);
         int width = sc.nextInt();
         int height = sc.nextInt();
-        rectangleArea(width, height);
+        
+        System.out.println("Area of rectangle is: " + rectangleArea(width, height));
         
     }
 

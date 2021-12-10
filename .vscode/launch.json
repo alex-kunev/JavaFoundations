@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MapsListsTheory",
+            "request": "launch",
+            "mainClass": "MapsListsTheory",
+            "projectName": "JavaFoundations_fed20069"
+        },
+        {
+            "type": "java",
+            "name": "Launch repeatString",
+            "request": "launch",
+            "mainClass": "methods.repeatString",
+            "projectName": "JavaFoundations_fed20069"
+        },
+        {
+            "type": "java",
             "name": "Launch printTriangle",
             "request": "launch",
             "mainClass": "methods.printTriangle",

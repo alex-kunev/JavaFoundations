@@ -1,37 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class ClassesTheory {
-    static Student {
-        private String name;
-        private int id;
-        private double averageGrade;
+    private static class Student {
+        private String firstName;
+        private String lastName;
+        private int age;
+        private String hometown;
 
-        ClassesTheory(String name, int id, double averageGrade) {
-            this.name = name;
-            this.id = id;
-            this.averageGrade = averageGrade;
+        Student(int id) {
+            this(null, null,  id,  null);
         }
 
-        public String getName(int id) {
-            return name;
+        public Student(String firstName, String lastName, int age, String hometown) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.hometown = hometown;
         }
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public static void main(String[] args) {
+//        Student student1 = new Student("George", 15, 6.00 );
+//
+//        Student student2 = new Student(16);
 
-        public int getId() {
-            return id;
-        }
+        Scanner sc = new Scanner(System.in);
 
-        public void setId(int id) {
-            this.id = id;
-        }
+        List<Student> students = new ArrayList<>();
 
-        public double getAverageGrade() {
-            return averageGrade;
-        }
+        String input = sc.next();
+        while (!input.equals("end")) {
+            Student student = new Student(input, sc.next(), sc.nextInt(),
+                    sc.next() );
 
-        public void setAverageGrade(double averageGrade) {
-            this.averageGrade = averageGrade;
+            students.add(student);
+
+            input = sc.next();
         }
+         String cityName = sc.next();
+
     }
 }

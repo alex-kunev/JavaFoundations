@@ -8,8 +8,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Locale;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
 
@@ -31,12 +30,64 @@ public class Main {
         double rand = Math.random();
         System.out.println("Pseudorandom number: " + rand);
 
-        // java.util.Random class as Pseudo-Random generator
+
+//        2. java.util.Random class as Pseudo-Random generator
         // needs to be initialized
-        Random randGen = new Random();
-        System.out.println("Random[5..10]: " + (randGen.nextInt(6) + 5));
+        Random randGenerator = new Random();
+        System.out.println("Random[5..10]: " + (randGenerator.nextInt(6) + 5));
+
+//        - the random generator starts from an initial 'seed':
+        Random randGen = new Random(12345);
+        System.out.println("Random[1…1000000]: " +
+                (randGen.nextInt(1_000_000) + 1));
+        Random randGen2 = new Random(12345);
+        System.out.println("Random[1…1000000]: " +
+                (randGen2.nextInt(1_000_000) + 1));
 
 
+//        3. Arrays Class - java. util.Arrays
+//         - part of the Java Collection Framework
+        List<Integer> list = Arrays.asList(10, 20, 30);
+        list = Arrays.asList(new Integer[] {50, 60, 70});
+//         - to print an array as text:
+        int[] arr = {10, 20, 30};
+        System.out.println("Array 'arr'= " + Arrays.toString(arr));
+//          - to sort an array:
+        Arrays.sort(arr);
+//          - sorting with Comparator<T>:
+        Integer[] arr1 = {1, 2, 3, 0}; //don't use int[]
+        Arrays.sort(arr1, (x,y) -> y.compareTo(x));
+        Arrays.sort(arr1, Comparator.reverseOrder());
+//          - compare for equality:
+        System.out.println("Compare using 'compare': " + Arrays.compare(arr,
+                new int[] {1,
+                2,3, 4}));
+        System.out.println( "Compare using 'equals': "+ Arrays.equals(arr,
+                new int[] {1, 2,3, 4}));
+
+
+
+//        4. Java Formatter
+//         - returns a formatted string by given locale, format, args
+//         - format() works similar to printf(..) method
+        String name = "Maria";
+        String introduction = String.format("Formatter: My name is %s", name);
+        System.out.println(introduction); // My name is Maria
+
+        String myName = "Mr Robot";
+        int age = 232;
+        System.out.printf("Printf: My name is %s. I am %d years old %n", myName,
+                age);
+        // but this doesn't work for methods that need to return String,
+        // such as toString(), because this prints the String -> format()!
+        String student = String.format("My name is %s. I am %d years old %n",
+                myName, age);
+
+//        - java.util.Formatter is a built-in Java class for pattern format
+//         - common formats for numeric, string and date/time datq
+        Formatter formatter = new Formatter();
+        formatter.format("Formatter: Hello, %s!", myName);
+        System.out.println(formatter);
 
 //        5. BigInteger and BigDecimal classes - for large numbers
 //        Calculating the factorial using created class below:

@@ -11,7 +11,19 @@ public class NewYearCountdown {
         //LocalDateTime's time now: 2021-12-22T12:35:31.399214100
 
         LocalDateTime now = LocalDateTime.now();
+        int dayOfYear = now.getDayOfYear();
+        int year = now.getYear();
         int timeLeft;
+
+        if (year % 4 == 0) {
+            timeLeft = 366 - dayOfYear;
+        } else {
+            timeLeft = 365 - dayOfYear;
+        }
+
+        System.out.println(timeLeft + " days until the end of this year! " +
+                "Hooorayyy!");
+
 
     }
 }
